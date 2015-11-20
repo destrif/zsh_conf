@@ -4,10 +4,19 @@
 # Mac version
 # alias ls='ls -G'
 # debian version
-alias ls='ls --color=auto'
-alias l='ls --color'
-alias la='ls -la --color'
-alias ll='ls -l --color'
+platform=`uname`
+
+if [[ $platform == 'linux' ]]; then
+  alias ls='ls --color=auto'
+  alias l='ls --color'
+  alias la='ls -la --color'
+  alias ll='ls -l --color'
+elif [[ $platform == 'Darwin' ]]; then
+  alias ls='ls -G'
+  alias l='ls --color'
+  alias la='ls -la --color'
+  alias ll='ls -l --color'
+fi
 
 alias cp='cp -R'
 
